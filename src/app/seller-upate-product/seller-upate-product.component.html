@@ -1,0 +1,21 @@
+<div class="flex flex-col">
+    <h1 class="text-center font-bold text-2xl text-primary">Update Product Details !</h1>
+    <p class="text-green-500 text-center font-bold text-sm">{{successfulmsg}}</p>
+    <form class="m-auto flex flex-col my-4 gap-2 w-80 flex-shrink-0" #updateproduct="ngForm" (ngSubmit)="updateProduct(updateproduct.value)">
+        <div class="flex flex-col h-40">
+            <img src="{{productDetails?.productImageLink}}" class="w-full h-full object-contain" />
+        </div>
+        <div class="flex flex-col gap-2">
+            <input type="text" placeholder="" name="productImageLink" ngModel="{{productDetails?.productImageLink}}">
+            <input type="text" placeholder="" name="productName" ngModel="{{productDetails?.productName}}">
+            <input type="text" placeholder="" name="productPrice" ngModel="{{productDetails?.productPrice}}">
+            <input type="text" placeholder="" name="productCategory" ngModel="{{productDetails?.productCategory}}">
+            <input type="text" placeholder="" name="productColor" ngModel="{{productDetails?.productColor}}">
+            <textarea type="text" placeholder="" name="productDescription" ngModel="{{productDetails?.productDescription}}"></textarea>
+            
+        </div>
+
+        <button class="bg-primaryy rounded-2xl py-2 px-4 text-white font-medium text-xl">Update</button>
+    </form>
+</div>
+

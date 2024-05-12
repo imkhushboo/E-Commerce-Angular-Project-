@@ -1,0 +1,39 @@
+<angular-carousel>
+    <ng-container *ngFor="let item of productlist">
+        <div *angularCarouselSlide class="relative h-[400px] flex justify-center cursor-pointer" (click)="showDetails(item.id)">
+            <div class="h-full">
+                <img class="h-full w-full object-cover" [src]="item.productImageLink" />
+            </div>
+            <div class="absolute bottom-2 w-3/5 m-auto backdrop-blur-0 text-black text-xl flex flex-col align center justify-center">
+                <h1 class="text-center">{{item.productName}}</h1>
+                <h2 class="text-center">{{item.productCategory}}</h2>
+            </div>
+        </div>
+    </ng-container>
+</angular-carousel>
+
+
+
+
+
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 my-4 mx-1">
+        <div class="group relative m-auto border-2 rounded-xl flex flex-col cursor-pointer w-60" *ngFor = "let item of trendingitem">
+            <div class="border-b-2">
+                <img src="{{item.productImageLink}}" />
+            </div>
+            <div class="flex flex-col gap-1 px-1 bg-gray-300 rounded-b-xl">
+                <div class="flex justify-between text-xl">
+                    <h1 >{{item.productName| titlecase}}</h1>
+                    <h2 class="font-bold">${{item.productPrice}}</h2>
+                </div>
+                <h3>{{item.productCategory}}</h3>
+                <h3 class="{{item.productColor}} rounded-full h-3 w-3"></h3>
+            </div>
+            <div class="invisible group-hover:visible">
+                <a [routerLink]="'details/' +  item.id" class="invisible group-hover:visible absolute bottom-0 left-0 text-white bg-primaryy p-2 rounded-xl">View Details</a>
+                <a href="" class="invisible group-hover:visible absolute bottom-0 right-0 text-white bg-primaryy p-2 rounded-xl" [routerLink]="'details/' +  item.id">Add to Cart</a>
+            </div>
+        </div>
+        
+       
+    </div>

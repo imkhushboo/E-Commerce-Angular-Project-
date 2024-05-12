@@ -1,18 +1,53 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { SellerAuthComponent } from './seller-auth/seller-auth.component';
+import { FormGroupName, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { SellerHomeComponent } from './seller-home/seller-home.component';
+import { SellerService } from './services/seller.service';
+import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
+import { SellerUpateProductComponent } from './seller-upate-product/seller-upate-product.component';
+import { CarouselModule } from '@marcreichel/angular-carousel';
+import { SearchComponent } from './search/search.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FooterComponent } from './footer/footer.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { CartPagheComponent } from './cart-paghe/cart-paghe.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { MyorderComponent } from './myorder/myorder.component';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    SellerAuthComponent,
+    SellerHomeComponent,
+    SellerAddProductComponent,
+    SellerUpateProductComponent,
+    SearchComponent,
+    ProductDetailsComponent,
+    FooterComponent,
+    UserAuthComponent,
+    CartPagheComponent,
+    CheckoutComponent,
+    MyorderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  CarouselModule
   ],
-  providers: [],
+  providers: [SellerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

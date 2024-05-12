@@ -1,0 +1,52 @@
+<header class="bg-primaryy flex p-4 text-white justify-between align-middle">
+    <h1 routerLink="/"    class="font-blold text-2xl cursor-pointer">E-COMM</h1>
+  
+
+      <div *ngIf="menutype === 'default' || menutype === 'user'" class="flex rounded-md  bg-white  w-3/5 border-2 " >
+       
+          <input #searchInput name="search" class="text-black w-full h-full rounded-l-md px-2" type ="text" placeholder="Search any product" (keyup)="searchProduct($event)" (blur)="hideSearch()" />
+           
+        
+          <button class=" font-bold   bg-primaryy text-white px-2" (click) = "submitSearch(searchInput.value)">Search</button>
+          <ul class="absolute z-10 top-12 bg-white border-2 text-primaryy h-fit" *ngIf="suggestedProduct?.length">
+            <li *ngFor="let item of suggestedProduct"  class=" px-6 py-2 border-b-2 cursor-pointer" ><a (mousedown)="showproductDetails(item.id)">{{item.productName}} : {{item.productColor}}</a></li>
+          </ul>
+            <div *ngIf ="suggestedProduct?.length === 0" class="absolute top-12 py-2 px-4 bg-white border-2 text-primaryy">Not Found !</div>  
+      </div>
+      
+    
+
+    <div [ngSwitch]="menutype">
+      <nav *ngSwitchCase="'user'"  class="flex px-4">
+        <ul class="flex gap-2 ">
+          <li routerLink="seller-auth" class="cursor-pointer">Seller</li>
+          <li routerLink="" class="cursor-pointer">Home</li>
+          <li>{{username}}</li>
+          <li routerLink="my-order" class="cursor-pointer">My Orders</li>
+          <li (click)="logoutUser()" class="cursor-pointer">Logout</li>
+          <li routerLink="cart-page" class="cursor-pointer">Cart({{cartItems}})</li>
+        </ul>
+      </nav>
+      
+
+        <nav *ngSwitchCase="'seller'"class="flex px-4">
+            <ul class="flex gap-2 ">
+              <li routerLink="seller-home" class="cursor-pointer">Product List</li>
+              <li routerLink="seller-add-product" class="cursor-pointer"> Add Products</li>
+              <li routerLink="login" (click)="logout()"  class="cursor-pointer">Log Out</li>
+              <li routerLink="cart" class="cursor-pointer">{{sellername | titlecase}}</li>
+            </ul>
+          </nav>
+          <nav *ngSwitchCase="'default'"  class="flex px-4">
+            <ul class="flex gap-2 ">
+              <li routerLink="seller-auth" class="cursor-pointer">Seller</li>
+              <li routerLink="" class="cursor-pointer">Home</li>
+              <li routerLink="user-auth" class="cursor-pointer">Login</li>
+              <li routerLink="cart" class="cursor-pointer">Cart({{cartItems}})</li>
+            </ul>
+          </nav>
+
+          
+    </div>
+  </header>
+

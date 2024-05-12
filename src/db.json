@@ -1,0 +1,70 @@
+{
+  "seller": [
+    {
+      "id": "ea9b",
+      "name": "khushboo",
+      "email": "vkhushboo540@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "f86a",
+      "name": "khushboo",
+      "email": "vermashivani0107@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "d757",
+      "name": "khushboo",
+      "email": "vermashivani0107@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "c5e5",
+      "name": "khushboo",
+      "email": "vermashivani0107@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "12a7",
+      "name": "khushboo",
+      "email": "vkhushboo540@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "products": [
+    {
+      "id": "7b85",
+      "productName": "smart watch",
+      "productPrice": "34",
+      "productCategory": "watch",
+      "productColor": "black",
+      "productImageLink": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/",
+      "productDescription": "wer"
+    },
+    {
+      "id": "ac5b",
+      "productName": "smart watch",
+      "productPrice": "34",
+      "productCategory": "watch",
+      "productColor": "black",
+      "productImageLink": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D/",
+      "productDescription": "wer"
+    }
+  ],
+  "users": [
+    {
+      "id": "b8d0",
+      "name": "khushboo",
+      "email": "vkhushboo540@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "881a",
+      "name": "khushboo",
+      "email": "vkhushboo540@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "carts": [],
+  "orders": []
+}

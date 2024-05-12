@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import "../node_modules/@marcreichel/angular-carousel/css/main.css";
+ 
+@import "../node_modules/@marcreichel/angular-carousel/themes/stripes.css";
+
+@import "../node_modules/@marcreichel/angular-carousel/themes/dots.css";
+

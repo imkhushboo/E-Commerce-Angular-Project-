@@ -1,0 +1,4 @@
+input,
+textarea {
+  @apply rounded-md py-2 px-4 border-2 border-primaryy;
+}

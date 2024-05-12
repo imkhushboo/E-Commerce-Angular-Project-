@@ -1,0 +1,40 @@
+<div class="flex mt-36 gap-2 px-4 py-2">
+    <div class="grid grid-cols-1 border-2 w-3/5 px-2 py-2">
+        
+        <div class="flex justify-between border-b-2 h-32 items-center" *ngFor="let item of Carts">
+            <div class="h-full w-32">
+                <img src="{{item.productImageLink}}"  class="object-cover aspect-square"/>
+            </div>
+            <h1>{{item.productName}}</h1>
+            <h2>Price: {{item.productPrice}}</h2>
+            <h3>Quantity: {{item.quantity}}</h3>
+            <button class="bg-primaryy text-white rounded-md px-4 py-2" (click)="handleRemoveToCart(item.productid)"> Remove To cart</button>
+        </div>
+        
+    </div>
+    
+    <div class="flex flex-col border-2 w-2/5 gap-2 px-2 h-64">
+        <h1 class="font-bold text-xl text-center">Summary</h1>
+        <div class="flex justify-between">
+            <h1>Amount</h1>
+            <h1>{{priceSummary.price}}</h1>
+        </div>
+        <div class="flex justify-between">
+            <h1>Tax</h1>
+            <h1>{{priceSummary.tax}}</h1>
+        </div>
+        <div class="flex justify-between">
+            <h1>Delievery</h1>
+            <h1>{{this.priceSummary.delievery}}</h1>
+        </div>
+        <div class="flex justify-between">
+            <h1>Discount</h1>
+            <h1>{{this.priceSummary.discount}}</h1>
+        </div>
+        <div class="flex justify-between">
+            <h1 class="text-2xl font-bold">Total</h1>
+            <h1>{{this.priceSummary.total}}</h1>
+        </div>
+        <button  (click)="handleCheckout()" class="bg-primaryy text-white px-4  py-2 rounded-md">Checkout</button>
+    </div>
+</div> 

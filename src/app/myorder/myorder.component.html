@@ -1,0 +1,25 @@
+<div class="w-4/5 mx-auto">
+    <h1 class="text-4xl text-center font-bold ">My Orders</h1>
+    <div class="flex justify-between items-center border-b-2 px-4 mt-6">
+        <h1 class="text-center text-xl font-medium">Orders</h1>
+        <h1 class="text-center text-xl font-medium">Price</h1>
+        <h2 class="text-center text-xl font-medium">Status</h2>
+
+        <h1 class="text-center text-xl font-medium">Cancel Order</h1>
+
+    </div>
+
+
+    <div class="grid grid-cols-1 my-4 px-4 gap-2">
+        <div class="flex justify-between items-center border-b-2 my-2" *ngFor="let item of Orders">
+            <div class="h-32 w-32">
+                <img src="https://i.pinimg.com/564x/10/0d/3b/100d3bdb137c28ca6bbed2f2186c24e8.jpg" class="object-cover aspect-square" />
+            </div>
+            <h1> {{item.totalPrice}}</h1>
+            <h2>Inprogress</h2>
+
+            <button (click)="handleCancelOrder(item?.id)" class="bg-red-500 text-white rounded-md px-2 py-1">Cancel Order</button>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <h1 class="text-center text-2xl font-bold mt-4">CheckOut Page</h1>
+    <div class="flex gap-3">
+        <div class="flex flex-col w-1/5 m-auto p-2">
+            <h1 class="text-center text-xl font-medium">Add Shipping Address</h1>
+            <form #order="ngForm" (ngSubmit)="handleOrder(order.value)" class="flex flex-col gap-2 mt-2">
+                <input type="text" name="name" placeholder=" enter name" ngModel/>
+                <input type="text" name="address"  placeholder="enter address" ngModel/>
+                <input type="email" name="email" placeholder="enter email" ngModel/>
+                <input type="text" name="contact" placeholder="contact no." ngModel/>
+                <button class="bg-primaryy text-white rounded-md px-4 py-2">Place Order</button>
+            </form>
+        </div>
+
+        <div class="flex flex-col w-2/5 ">
+            <h1 class="text-2xl font-bold">Total Amount :  {{totalPrice}}</h1>
+            <h1>Payment method:</h1>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<h1 class="text-center border-b-2 font-bold text-2xl px-2 py-4">All Products</h1>
+<div class="grid flex-shrink-0 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 mx-3 mt-4">
+ <div *ngFor= "let item of productList" class=" group relative flex flex-col m-auto my-4  cursor-pointer border-2 border-primaryy rounded-lg p-3 h-64 w-64 ">
+    <div class="hover:blur">
+
+        <div class=" flex h-3/5">
+    
+            <img  src = {{item.productImageLink}} class="h-full w-full object-cover aspect-square "/>
+        </div>
+        <div class="flex flex-col flex-end gap-2 h-2/5 px-2 py-1 ">
+    
+            <h1 class="text-lg font-bold">{{item.productName}}</h1>
+            <h2>{{item.productDescription}}</h2>
+        </div>
+    </div>
+    <div>
+        <button (click)="deleteproduct(item.id)" #deletebtn class="bg-red-500  text-white font-bold rounded-2xl px-4 py-3 invisible group-hover:visible  
+        absolute top-24 left-12"><i class="fa-solid fa-trash"></i></button>
+        <a routerLink="/seller-update-product/{{item.id}}" target="_blank" class="bg-primaryy  text-white font-bold rounded-2xl px-4 py-3 invisible group-hover:visible  
+        absolute top-24 right-14"><i class="fa-sharp fa-solid fa-pen-to-square"></i></a>
+
+    </div>
+</div>
+
+</div>

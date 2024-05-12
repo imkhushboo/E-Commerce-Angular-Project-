@@ -1,0 +1,19 @@
+<div class="flex flex-col m-auto my-2 w-4/5 gap-2">
+    <div class="flex h-32 w-full border-2 cursor-pointer" *ngFor="let item of productList" (click)="showDetails(item.id)">
+        <div class="w-32" >
+            <img src={{item.productImageLink}} class="h-full w-full object-cover aspect-square"/>
+            
+        </div>
+        <div class="px-2 w-4/5">
+            <div class="flex justify-between">
+                <h1 class="font-bold text-2xl">{{item.productName | titlecase}} </h1>
+                <span class="font-bold text-2xl">${{item.productPrice}}</span>
+            </div>
+            <h2>{{item.productDescription}}</h2>
+            <h3>Category : {{item.productCategory}}</h3>
+            <div class="h-3 w-3 rounded-full" [style.backgroundColor] = "item.productColor"></div>
+            
+            
+        </div>
+    </div>
+</div>

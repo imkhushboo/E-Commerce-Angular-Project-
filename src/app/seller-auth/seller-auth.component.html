@@ -1,0 +1,34 @@
+<div class="flex p-3">
+    <div *ngIf="!showLogin" class ="border-primaryy rounded-xl  border-2 m-auto h-fit py-2 px-4">
+        <h1 class="text-center font-bold text-2xl border-b-2 h-[40px] text-primaryy">Seller Sign Up!</h1>
+        <form #sellerSignup = "ngForm" (ngSubmit)="signup(sellerSignup.value) " class ="flex flex-col gap-3 m-1">
+            <label class="text-lg text-primaryy ">Enter Name</label>
+          <input type="name " placeholder="enter name" class="border-2 rounded-md p-2 form-input" name=  "name" ngModel>
+          <label class="text-lg  text-primaryy">Enter Email</label>
+
+          <input type="email " placeholder="enter email" class="border-2 rounded-md p-2 form-input" name="email" ngModel>
+          <label class="text-lg  text-primaryy">Enter Password</label>
+
+          <input type="password" placeholder="enter password" class="border-2 rounded-md p-2 form-input" name="password" ngModel>
+          <button class="bg-primaryy rounded-md p-2 form-button text-white">SignUp</button>
+          <p>Already Have Account ? <a class="text-blue-500 underline cursor-pointer font-medium"  (click) = "openLogin()">Login Up</a></p>
+
+        </form>
+    </div>
+    <div *ngIf="showLogin"  class=" border-primaryy rounded-xl  border-2 m-auto h-fit py-2 px-4 mt-4">
+        <h1 class="text-center font-bold text-2xl border-b-2 h-[40px] text-primaryy">Seller Login Up!</h1>
+        <form #sellerLoginup = "ngForm" (ngSubmit)="loginup(sellerLoginup.value) " class ="flex flex-col gap-3 m-1">
+            <p class="text-red-600 font-bold">{{authErrormsg}}</p>
+          <label class="text-lg  text-primaryy">Enter Email</label>
+
+          <input type="email " placeholder="enter email" class="border-2 rounded-md p-2 form-input" name="email" ngModel>
+          <label class="text-lg text-primaryy">Enter Password</label>
+
+          <input type="password" placeholder="enter password" class="border-2 rounded-md p-2 form-input" name="password" ngModel>
+          <button class="bg-primaryy rounded-md p-2 form-button text-white">Login</button>
+          <p>Don't Have Account ? <a class="text-blue-500 underline cursor-pointer font-medium" (click) = "openSignup()">Sign Up</a></p>
+
+
+        </form>
+    </div>
+</div>
